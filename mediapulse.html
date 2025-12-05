@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediaPulse | Where Creativity Meets Opportunities</title>
+  <meta name="description" content="MediaPulse is a premium creator-brand collaboration agency connecting visionary brands with talented content creators.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --background: hsl(0, 0%, 5%);
+      --foreground: hsl(0, 0%, 98%);
+      --card: hsl(0, 0%, 8%);
+      --card-foreground: hsl(0, 0%, 98%);
+      --primary: hsl(0, 0%, 98%);
+      --primary-foreground: hsl(0, 0%, 5%);
+      --secondary: hsl(0, 0%, 12%);
+      --secondary-foreground: hsl(0, 0%, 98%);
+      --muted: hsl(0, 0%, 15%);
+      --muted-foreground: hsl(0, 0%, 60%);
+      --accent: hsl(0, 0%, 20%);
+      --border: hsl(0, 0%, 18%);
+      --radius: 0.75rem;
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--foreground);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      line-height: 1.1;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 3rem;
+      }
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 1rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-primary:active {
+      transform: scale(1);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.5rem;
+      background: transparent;
+      color: var(--foreground);
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 0.875rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--secondary);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Glass Cards */
+    .glass-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+    }
+
+    .glass-card-strong {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+    }
+
+    /* Text Gradient */
+    .text-gradient {
+      background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 70%) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Geometric Shapes */
+    .geometric-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+      filter: blur(80px);
+      background: radial-gradient(circle, hsl(0, 0%, 30%) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Line Accent */
+    .line-accent {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+    }
+
+    /* Section Padding */
+    .section-padding {
+      padding: 6rem 0;
+    }
+
+    @media (min-width: 768px) {
+      .section-padding {
+        padding: 8rem 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-padding {
+        padding: 10rem 0;
+      }
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-float-delayed {
+      animation: float 6s ease-in-out infinite;
+      animation-delay: -3s;
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    .animate-fade-up-delayed {
+      animation: fadeUp 0.8s ease-out forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+
+    /* ==================== NAVIGATION ==================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(13, 13, 13, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 5rem;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links a {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--foreground);
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .nav-cta {
+        display: block;
+      }
+    }
+
+    .nav-mobile-btn {
+      display: flex;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+      color: var(--foreground);
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .nav-mobile-btn {
+        display: none;
+      }
+    }
+
+    .nav-mobile-menu {
+      display: none;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-mobile-menu.open {
+      display: block;
+    }
+
+    .nav-mobile-menu a {
+      display: block;
+      padding: 0.5rem 0;
+      color: var(--foreground);
+    }
+
+    .nav-mobile-menu .btn-primary {
+      width: 100%;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero .geometric-shape:nth-child(1) {
+      width: 600px;
+      height: 600px;
+      top: -12rem;
+      left: -12rem;
+    }
+
+    .hero .geometric-shape:nth-child(2) {
+      width: 500px;
+      height: 500px;
+      bottom: -8rem;
+      right: -8rem;
+    }
+
+    .hero .geometric-shape:nth-child(3) {
+      width: 300px;
+      height: 300px;
+      top: 25%;
+      right: 25%;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.02;
+      background-image: 
+        linear-gradient(hsl(0, 0%, 50%) 1px, transparent 1px),
+        linear-gradient(90deg, hsl(0, 0%, 50%) 1px, transparent 1px);
+      background-size: 100px 100px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-eyebrow {
+        font-size: 1rem;
+      }
+    }
+
+    .hero-title {
+      font-weight: 800;
+      font-size: 3.5rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 7rem;
+      }
+    }
+
+    .hero-motto {
+      font-size: 1.25rem;
+      color: var(--muted-foreground);
+      font-weight: 300;
+      max-width: 42rem;
+      margin: 0 auto 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-motto {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-motto {
+        font-size: 1.875rem;
+      }
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 4rem;
+      background: linear-gradient(to bottom, transparent, var(--border), transparent);
+    }
+
+    /* Arrow Icon */
+    .icon-arrow {
+      width: 1.25rem;
+      height: 1.25rem;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-primary:hover .icon-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ==================== ABOUT ==================== */
+    .about-grid {
+      display: grid;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about-label {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .about-title {
+      font-weight: 700;
+      font-size: 2.25rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .about-title {
+        font-size: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .about-title {
+        font-size: 3.75rem;
+      }
+    }
+
+    .about-text {
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .about-text {
+        font-size: 1.25rem;
+      }
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.875rem;
+    }
+
+    @media (min-width: 768px) {
+      .stat-number {
+        font-size: 2.25rem;
+      }
+    }
+
+    .stat-label {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    /* ==================== SERVICES ==================== */
+    .services {
+      position: relative;
+    }
+
+    .services .geometric-shape {
+      width: 400px;
+      height: 400px;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto 5rem;
+    }
+
+    .section-label {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 2.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-title {
+        font-size: 3.75rem;
+      }
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .service-card {
+      padding: 2rem;
+      transition: background 0.5s ease;
+    }
+
+    @media (min-width: 768px) {
+      .service-card {
+        padding: 2.5rem;
+      }
+    }
+
+    .service-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .service-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .service-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--accent);
+    }
+
+    .service-icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .service-title {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .service-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .service-desc {
+      color: var(--muted-foreground);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ==================== PROCESS ==================== */
+    .process {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .process-grid {
+      display: grid;
+      gap: 2rem;
+      position: relative;
+    }
+
+    @media (min-width: 1024px) {
+      .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+      }
+    }
+
+    .process-line {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--border);
+      transform: translateY(-50%);
+    }
+
+    @media (min-width: 1024px) {
+      .process-line {
+        display: block;
+      }
+    }
+
+    .process-card {
+      position: relative;
+      z-index: 10;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .process-card {
+        padding: 2.5rem;
+      }
+    }
+
+    .process-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .process-title {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .process-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .process-desc {
+      color: var(--muted-foreground);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ==================== JOIN CTA ==================== */
+    .join-cta {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .join-cta .geometric-shape:nth-child(1) {
+      width: 500px;
+      height: 500px;
+      top: 0;
+      right: 0;
+      transform: translate(33%, -33%);
+    }
+
+    .join-cta .geometric-shape:nth-child(2) {
+      width: 400px;
+      height: 400px;
+      bottom: 0;
+      left: 0;
+      transform: translate(-33%, 33%);
+    }
+
+    .join-card {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 3rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .join-card {
+        padding: 4rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .join-card {
+        padding: 5rem;
+      }
+    }
+
+    .join-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: var(--secondary);
+      margin-bottom: 2rem;
+    }
+
+    .join-icon svg {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    .join-title {
+      font-weight: 700;
+      font-size: 1.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .join-title {
+        font-size: 2.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .join-title {
+        font-size: 3rem;
+      }
+    }
+
+    .join-text {
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+      font-weight: 300;
+      max-width: 42rem;
+      margin: 0 auto 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .join-text {
+        font-size: 1.25rem;
+      }
+    }
+
+    .join-trust {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .join-trust span {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+    }
+
+    /* ==================== CONTACT ==================== */
+    .contact {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .contact-label {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .contact-title {
+      font-weight: 700;
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-title {
+        font-size: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .contact-title {
+        font-size: 3.75rem;
+      }
+    }
+
+    .contact-text {
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-text {
+        font-size: 1.25rem;
+      }
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem;
+      transition: background 0.3s ease;
+    }
+
+    .contact-link:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .contact-link-inner {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-link-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-link-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .contact-link-title {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 1.125rem;
+    }
+
+    .contact-link-email {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+    }
+
+    .contact-link-arrow {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .contact-link:hover .contact-link-arrow {
+      opacity: 1;
+    }
+
+    .contact-form {
+      padding: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-form {
+        padding: 2.5rem;
+      }
+    }
+
+    .contact-form h3 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      color: var(--foreground);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--muted-foreground);
+    }
+
+    .form-group textarea {
+      resize: none;
+    }
+
+    .contact-form .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ==================== FOOTER ==================== */
+    .footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--foreground);
+    }
+
+    .footer-copy {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="#" class="nav-logo">MediaPulse</a>
+        
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <a href="https://sites.google.com/view/mediapulse-official/home?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" class="nav-cta btn-outline">Join as Creator</a>
+
+        <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+        </button>
+      </nav>
+
+      <div class="nav-mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a href="https://sites.google.com/view/mediapulse-official/home?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" class="btn-primary">Join as Creator</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="geometric-shape"></div>
+    <div class="geometric-shape animate-float"></div>
+    <div class="geometric-shape animate-float-delayed"></div>
+    <div class="hero-grid"></div>
+
+    <div class="container hero-content">
+      <div class="animate-fade-up">
+        <p class="hero-eyebrow">Creator × Brand Agency</p>
+        <h1 class="hero-title">Media<span class="text-gradient">Pulse</span></h1>
+        <p class="hero-motto">Where Creativity Meets Opportunities</p>
+      </div>
+
+      <div class="animate-fade-up-delayed">
+        <a href="https://sites.google.com/view/mediapulse-official/home?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Join as Creator
+          <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll animate-fade-up-delayed">
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="line-accent" style="margin-bottom: 4rem;"></div>
+      
+      <div class="about-grid">
+        <div>
+          <p class="about-label">About Us</p>
+          <h2 class="about-title">
+            Bridging the Gap Between
+            <span class="text-gradient" style="display: block;">Brands & Creators</span>
+          </h2>
+        </div>
+
+        <div>
+          <p class="about-text">
+            MediaPulse is a premium creator-brand collaboration agency that connects 
+            visionary brands with talented content creators. We curate partnerships 
+            that resonate, campaigns that convert, and content that captivates.
+          </p>
+          <p class="about-text">
+            Our mission is simple: transform creative potential into measurable impact. 
+            We handle the complexity so you can focus on what matters—creating.
+          </p>
+
+          <div class="about-stats">
+            <div>
+              <p class="stat-number">500+</p>
+              <p class="stat-label">Creators</p>
+            </div>
+            <div>
+              <p class="stat-number">120+</p>
+              <p class="stat-label">Brands</p>
+            </div>
+            <div>
+              <p class="stat-number">50M+</p>
+              <p class="stat-label">Reach</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section-padding services" id="services">
+    <div class="geometric-shape"></div>
+    
+    <div class="container" style="position: relative; z-index: 10;">
+      <div class="section-header">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Our Services</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="glass-card service-card">
+          <div class="service-inner">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="service-title">Creator Shortlisting</h3>
+              <p class="service-desc">We handpick creators that align perfectly with your brand's vision, values, and target audience.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-inner">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 11 18-5v12L3 14v-3z"></path>
+                <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="service-title">Campaign Management</h3>
+              <p class="service-desc">End-to-end campaign execution from strategy to delivery, ensuring maximum impact and ROI.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-inner">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m22 8-6 4 6 4V8Z"></path>
+                <rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect>
+              </svg>
+            </div>
+            <div>
+              <h3 class="service-title">UGC Production</h3>
+              <p class="service-desc">Authentic, high-quality user-generated content that drives engagement and builds trust.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-inner">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m11 17 2 2a1 1 0 1 0 3-3"></path>
+                <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path>
+                <path d="m21 3 1 11h-2"></path>
+                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path>
+                <path d="M3 4h8"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="service-title">Influencer Coordination</h3>
+              <p class="service-desc">Seamless communication and coordination between brands and creators for smooth collaborations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section-padding process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">How It Works</p>
+        <h2 class="section-title">Our Process</h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-line"></div>
+
+        <div class="glass-card-strong process-card">
+          <div class="process-number">01</div>
+          <h3 class="process-title">Share Your Goal</h3>
+          <p class="process-desc">Tell us about your brand, campaign objectives, and the type of creators you're looking for.</p>
+        </div>
+
+        <div class="glass-card-strong process-card">
+          <div class="process-number">02</div>
+          <h3 class="process-title">We Shortlist Creators</h3>
+          <p class="process-desc">Our team curates a selection of creators that match your requirements and brand aesthetic.</p>
+        </div>
+
+        <div class="glass-card-strong process-card">
+          <div class="process-number">03</div>
+          <h3 class="process-title">Approvals & Delivery</h3>
+          <p class="process-desc">Review, approve, and receive polished content ready to amplify your brand's presence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join CTA Section -->
+  <section class="section-padding join-cta" id="join">
+    <div class="geometric-shape"></div>
+    <div class="geometric-shape"></div>
+
+    <div class="container" style="position: relative; z-index: 10;">
+      <div class="glass-card join-card">
+        <div class="join-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
+          </svg>
+        </div>
+
+        <h2 class="join-title">
+          Become a Part of
+          <span class="text-gradient" style="display: block;">MediaPulse</span>
+        </h2>
+
+        <p class="join-text">
+          Join our exclusive network of creators and unlock opportunities with 
+          leading brands. Your talent deserves the right stage.
+        </p>
+
+        <a href="https://sites.google.com/view/mediapulse-official/home?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Join as Creator
+          <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+
+        <div class="join-trust">
+          <span>✓ No upfront fees</span>
+          <span>✓ Vetted brand partners</span>
+          <span>✓ Fair compensation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-padding contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <p class="contact-label">For Brands</p>
+          <h2 class="contact-title">Work With Us</h2>
+          <p class="contact-text">
+            Ready to elevate your brand with authentic creator partnerships? 
+            Let's discuss how MediaPulse can help you reach your audience.
+          </p>
+
+          <a href="mailto:brands@mediapulse.agency" class="glass-card contact-link">
+            <div class="contact-link-inner">
+              <div class="contact-link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-link-title">Email Us</p>
+                <p class="contact-link-email">brands@mediapulse.agency</p>
+              </div>
+            </div>
+            <svg class="contact-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 7h10v10"></path>
+              <path d="M7 17 17 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="glass-card-strong contact-form">
+          <h3>Send a Message</h3>
+
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="brandName">Brand Name</label>
+              <input type="text" id="brandName" placeholder="Your brand name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="you@brand.com">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" placeholder="Tell us about your campaign goals..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">MediaPulse</div>
+
+        <nav class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </nav>
+
+        <p class="footer-copy">© 2024 MediaPulse. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation scroll effect
+    const nav = document.getElementById('nav');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      
+      // Toggle icon between menu and close
+      const svg = mobileMenuBtn.querySelector('svg');
+      if (mobileMenu.classList.contains('open')) {
+        svg.innerHTML = `
+          <line x1="18" x2="6" y1="6" y2="18"></line>
+          <line x1="6" x2="18" y1="6" y2="18"></line>
+        `;
+      } else {
+        svg.innerHTML = `
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        `;
+      }
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileMenuBtn.querySelector('svg').innerHTML = `
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        `;
+      });
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      contactForm.reset();
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
